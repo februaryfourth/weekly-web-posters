@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding-top: 5%;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    background: #747f70;
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    grid-template-areas: "l c r" "l cb r";
+    grid-template-rows: 85vh 15vh;
+}
+
+.date {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.date p {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.Left {
+    grid-area: l;
+}
+
+.date p {
+    transform: rotate(90deg);
+}
+
+.right {
+    grid-area: r;
+}
+
+.background {
+    grid-area: c;
+    background-image: url(/Fiona\ Maternity\ Photos\ 1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/* top left and right sections */
+
+.boxes {
+    position: absolute;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.boxes .leftBox,
+.boxes .rightBox {
+    width: 30%;
+    height: 30%;
+    padding: 20px;
+    position: relative;
+}
+
+.boxes .line {
+    width: 50px;
+    background-color: white;
+    height: 1px;
+    position: absolute;
+}
+
+
+/* Left box */
+
+.leftBox .lineR {
+    top: 0px;
+    right: 15px;
+    position: absolute;
+    transform: rotate(135deg);
+}
+
+.leftBox .lineBr {
+    top: 95px;
+    right: 15px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.leftBox .lineL {
+    top: 0px;
+    left: 10px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.leftBox .lineBl {
+    top: 95px;
+    left: 10px;
+    position: absolute;
+    transform: rotate(135deg);
+}
+
+
+/* Right box*/
+
+.rightBox .lineR {
+    top: 0px;
+    right: 15px;
+    position: absolute;
+    transform: rotate(135deg);
+}
+
+.rightBox .lineBr {
+    top: 95px;
+    right: 15px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.rightBox .lineL {
+    top: 0px;
+    left: 10px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.rightBox .lineBl {
+    top: 95px;
+    left: 10px;
+    position: absolute;
+    transform: rotate(135deg);
+}
+
+
+/*second image */
+
+.secondImage {
+    width: 200px;
+    position: relative;
+    left: -70px;
+    top: -40px;
+}
+
+.secondImage img {
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+}
+
+
+/*Title Text bottom*/
+
+.title-text {
+    color: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 610px;
+    width: 100%;
+}
+
+.title-text h1 {
+    text-align: center;
+    font-size: 7em;
+    line-height: 0.8em;
+}
+
+
+/* circle thompson footer */
+
+.circle {
+    grid-area: cb;
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5%;
+}
+
+.circle p {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+@media only screen and (min-width:650px) {
+    main {
+        width: 700px;
+    }
+    body {
+        background: cornsilk;
+    }
+}

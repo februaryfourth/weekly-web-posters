@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: white;
+    font-size: 1em;
+}
+
+#container {
+    background-color: #ffed03;
+    width: 100%;
+    /*Make this less on ipad*/
+    margin: 0 auto;
+    padding: 1%;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    grid-area: header;
+}
+
+
+/* main {
+    display: grid;
+    grid-template-columns: repeat(auto, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    grid-template-areas: "left right" "center center" "bl br";
+    gap: 0.5em;
+}
+
+.left {
+    grid-area: left;
+    height: 400px
+}
+
+.left h1,
+.bottom-left h1 {
+    font-size: 10em;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.right h1,
+.bottom-right h1 {
+    font-style: italic;
+    font-size: 4em;
+    text-align: center;
+    font-weight: 100;
+    font-family: helvetica;
+    color: #ffed03;
+}
+
+.right,
+.bottom-right {
+    background-color: black;
+}
+
+.right {
+    grid-area: right;
+    height: 400px;
+}
+
+.center {
+    grid-area: center;
+    height: 300px;
+    background-color: white;
+}
+
+.center h1 {
+    font-size: 7em;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.bottom-left {
+    grid-area: br;
+    height: 400px;
+}
+
+.bottom-right {
+    grid-area: bl;
+    height: 400px;
+} */
+
+header div {
+    flex: 0 0 48%;
+    margin-bottom: 1%;
+}
+
+header div:nth-child(1) {
+    order: 1;
+}
+
+header div:nth-child(2) {
+    order: 3;
+}
+
+header div:nth-child(3) {
+    order: 4;
+}
+
+header div:nth-child(4) {
+    order: 2;
+}
+
+header .logo img {
+    width: 90%;
+}
+
+header .dateButton {
+    color: #ffed03;
+    background: black;
+    border-radius: 10px;
+    height: 30px;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.8em;
+}
+
+.dateButton span {
+    font-style: italic;
+}
+
+.extraInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.extraInfo span {
+    font-size: 0.8em;
+}
+
+.extraInfo img {
+    height: 25px;
+}
+
+section {
+    border: 3px solid black;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.left,
+.bottom-left {
+    padding: 4% 0;
+    transition: 0.2s ease-in-out;
+}
+
+.open {
+    font-size: 8em;
+    font-style: italic;
+    font-weight: 400;
+    font-family: helvetica;
+}
+
+.left:hover,
+.bottom-left:hover {
+    color: #ffed03;
+    background: black;
+    transition: 0.2s ease-in-out;
+    cursor: all-scroll;
+}
+
+.right,
+.bottom-right {
+    padding: 3% 0;
+    background: black;
+    color: #ffed03;
+    transition: 0.2s ease-in-out;
+}
+
+.right:hover,
+.bottom-right:hover {
+    background: #ffed03;
+    color: black;
+    transition: 0.2s ease-in-out;
+    cursor: all-scroll;
+}
+
+.main-date {
+    font-size: 3.5em;
+    font-style: italic;
+    font-weight: 200;
+    font-family: helvetica;
+    text-align: center;
+    padding: 0 3%;
+}
+
+.main-date span {
+    font-style: normal;
+}
+
+.center {
+    padding: 3% 0;
+    background: white;
+    transition: 0.2s ease-in-out;
+}
+
+.center h1 {
+    font-weight: 800;
+}
+
+.center:hover {
+    color: white;
+    background: black;
+    border: 3px solid white;
+    transition: 0.2s ease-in-out;
+    cursor: all-scroll;
+}
+
+
+/*RESPONSIVE TABLET*/
+
+@media only screen and (min-width:1024px) {
+    header div {
+        flex: 0 0 23%;
+        margin: 0;
+    }
+    header div:nth-child(1) {
+        order: 1;
+    }
+    header div:nth-child(2) {
+        order: 2;
+    }
+    header div:nth-child(3) {
+        order: 3;
+    }
+    header div:nth-child(4) {
+        order: 4;
+    }
+    #container {
+        width: 960px;
+        padding: 1%;
+    }
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0em 0.5em;
+        grid-template-areas: "left right""center center""bottom-left bottom-right";
+    }
+    .left {
+        grid-area: left;
+        height: 350px;
+    }
+    .right {
+        grid-area: right;
+        height: 350px;
+    }
+    .center {
+        grid-area: center;
+        height: 290px;
+    }
+    .center h1 {
+        font-size: 6em;
+        font-weight: 800;
+    }
+    .bottom-left {
+        grid-area: bottom-right;
+        height: 350px;
+    }
+    .bottom-right {
+        grid-area: bottom-left;
+        height: 350px;
+    }
+    .main-date {
+        font-size: 3em;
+    }
+}
