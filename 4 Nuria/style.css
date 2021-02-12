@@ -11,14 +11,15 @@ main {
     background: #747f70;
     display: grid;
     grid-template-columns: 10% auto 10%;
-    grid-template-areas: "l c r" "l cb r";
+    grid-template-areas: "l c r" "b b b";
     grid-template-rows: 85vh 15vh;
+    overflow: hidden;
 }
 
 .date {
     display: grid;
     justify-content: center;
-    align-content: center;
+    text-align: center;
 }
 
 .date p {
@@ -26,14 +27,17 @@ main {
     text-transform: uppercase;
     font-size: 14px;
     font-family: sans-serif;
+    z-index: 999;
+    writing-mode: vertical-lr;
+}
+
+.date p span {
+    padding: 5px 5px;
+    font-size: 5px;
 }
 
 .Left {
     grid-area: l;
-}
-
-.date p {
-    transform: rotate(90deg);
 }
 
 .right {
@@ -68,6 +72,7 @@ main {
     height: 30%;
     padding: 20px;
     position: relative;
+    z-index: 999;
 }
 
 .boxes .line {
@@ -75,6 +80,42 @@ main {
     background-color: white;
     height: 1px;
     position: absolute;
+}
+
+.boxes:hover .leftBox .line {
+    animation-name: spinningL;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.boxes:hover .rightBox .line {
+    animation-name: spinningR;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spinningL {
+    0% {
+        transform: rotate(45deg)
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes spinningR {
+    0% {
+        transform: rotate(135deg)
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
 }
 
 
@@ -139,20 +180,50 @@ main {
     transform: rotate(135deg);
 }
 
+@keyframes shine {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
 
 /*second image */
 
 .secondImage {
     width: 200px;
     position: relative;
-    left: -70px;
+    left: -100px;
     top: -40px;
+    background-color: #ff1f20;
+    height: 300px;
+    background-image: url(/Fiona\ Maternity\ Photos\ 8.jpg);
+    background-size: contain;
+    background-blend-mode: multiply;
+    filter: brightness(150%);
+    transition: all 1s ease;
 }
 
-.secondImage img {
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
+.secondImage:hover {
+    left: -100px;
+    animation-name: inout;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    transition: all 1s ease;
+}
+
+@keyframes inout {
+    from {
+        left: -100px
+    }
+    to {
+        left: 0px;
+    }
 }
 
 
@@ -176,7 +247,7 @@ main {
 /* circle thompson footer */
 
 .circle {
-    grid-area: cb;
+    grid-area: b;
     width: 120px;
     height: 120px;
     border: 1px solid white;
@@ -202,5 +273,20 @@ main {
     }
     body {
         background: cornsilk;
+    }
+    .title-text {
+        color: white;
+        margin: 0 auto;
+        position: absolute;
+        top: 550px;
+        width: 100%;
+    }
+    .title-text h1 {
+        text-align: center;
+        font-size: 10em;
+        line-height: 0.8em;
+    }
+    .secondImage {
+        left: -70px;
     }
 }
