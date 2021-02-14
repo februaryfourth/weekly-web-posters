@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YeahAir Flyer design</title>
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <div class="image-area">
+            <div class="image-background">
+            </div>
+        </div>
+        <article>
+
+            <div class="name t-left">
+                <p>DavidCapo <br>Dj</p>
+            </div>
+            <div class="company-title t-center">
+                <p>Yeah!Air<br>Girona</p>
+            </div>
+            <div id="date" class="date t-right">
+                date text
+                <!--Add js date script here-->
+            </div>
+
+            <div class="signature c-left">
+                <h1>19-0/h</h1>
+            </div>
+            <div class="signature c-right">
+                <h1>Sessions</h1>
+            </div>
+
+            <div class="notes1 c-right">
+                <div class="left"></div>
+                <p class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus.</p>
+            </div>
+            <div class="notes b-center">
+                <p class="left">Happy Birth-day Capo</p>
+            </div>
+            <div class="notes b-right">
+                <p class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus.</p>
+            </div>
+        </article>
+        <footer>
+            <h1>Yeah!Air</h1>
+        </footer>
+    </div>
+    <script>
+        function setDate() {
+            let todayDate = new Date()
+            let year = todayDate.getFullYear();
+            let month = todayDate.getMonth() + 1;
+            let days = todayDate.getDate();
+            let fulldate = days + "/" + month + "/" + year;
+
+
+
+            let viewDate = document.getElementById('date');
+            viewDate.innerHTML = fulldate;
+        }
+        setDate();
+    </script>
+</body>
+
+</html>
